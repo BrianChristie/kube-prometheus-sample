@@ -19,6 +19,7 @@ spec:
   resources:
     requests:
       memory: 400Mi
+  retention: 40d
   ruleSelector:
     matchLabels:
       prometheus: k8s
@@ -30,4 +31,15 @@ spec:
   serviceAccountName: prometheus-k8s
   serviceMonitorNamespaceSelector: {}
   serviceMonitorSelector: {}
+  storage:
+    volumeClaimTemplate:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      spec:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: 100Gi
+        storageClassName: ssd
   version: v2.11.0
