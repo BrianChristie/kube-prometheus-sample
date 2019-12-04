@@ -1,0 +1,5 @@
+{
+    "jsonnet.libPaths": [
+        "/Users/brian/Documents/GitHub/brianchristie/kube-prometheus-sample/vendor/"
+    ],
+}
