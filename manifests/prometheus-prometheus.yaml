@@ -15,6 +15,10 @@ spec:
   nodeSelector:
     kubernetes.io/os: linux
   podMonitorSelector: {}
+  remoteWrite:
+    basicAuth: abcd123456
+    queueConfig: {}
+    url: https://www.scalyr.com/api/prometheus
   replicas: 2
   resources:
     requests:
